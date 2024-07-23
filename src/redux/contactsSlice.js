@@ -3,15 +3,15 @@ import contacts from "../contacts.json";
 
 const contactsSlice = createSlice({
   name: "contacts",
-  initialState: contacts,
+  initialState: { items: contacts },
   reducers: {
     addContact(state, action) {
       action.payload.id = nanoid();
-      state.push(action.payload);
+      state.items.push(action.payload);
     },
     deleteContact(state, action) {
-      const index = state.findIndex(({ id }) => id === action.payload);
-      state.splice(index, 1);
+      const index = state.items.findIndex(({ id }) => id === action.payload);
+      state.items.splice(index, 1);
     },
   },
 });
