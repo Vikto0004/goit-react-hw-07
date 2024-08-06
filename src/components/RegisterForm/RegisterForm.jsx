@@ -61,7 +61,7 @@ export default function RegisterForm() {
             placeholder=""
             id={`email${id}`}
           />
-          <label className={css.label} htmlFor={`number${id}`}>
+          <label className={css.label} htmlFor={`email${id}`}>
             Email
           </label>
         </div>
