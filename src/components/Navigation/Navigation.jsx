@@ -15,7 +15,7 @@ export default function Navigation() {
     <>
       <header>
         <NavLink to="/">Home</NavLink>
-        {isLoggedIn && <NavLink to="phones">Phones</NavLink>}
+        {isLoggedIn && <NavLink to="contacts">Contacts</NavLink>}
         {!isLoggedIn && (
           <div>
             <NavLink to="/register">Register</NavLink>
