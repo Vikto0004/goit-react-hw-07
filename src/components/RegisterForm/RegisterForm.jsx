@@ -1,16 +1,16 @@
 import { ErrorMessage, Field, Formik, Form } from "formik";
 import { useId } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import css from "./RegisterForm.module.css";
-// import { Form } from "react-router-dom";
+import { register } from "../../redux/auth/operation";
 
 export default function RegisterForm() {
   const id = useId();
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    // dispatch(addContact(values));
+    dispatch(register(values));
     actions.resetForm();
   };
 
@@ -33,7 +33,8 @@ export default function RegisterForm() {
     <Formik
       initialValues={{
         name: "",
-        number: "",
+        email: "",
+        password: "",
       }}
       onSubmit={handleSubmit}
       validationSchema={addContactSchema}

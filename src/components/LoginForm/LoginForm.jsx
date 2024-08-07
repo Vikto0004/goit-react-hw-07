@@ -1,16 +1,16 @@
 import { ErrorMessage, Field, Formik, Form } from "formik";
 import { useId } from "react";
-// import { useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import css from "./LoginForm.module.css";
-// import { Form } from "react-router-dom";
+import { logIn } from "../../redux/auth/operation";
 
 export default function LoginForm() {
   const id = useId();
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    // dispatch(addContact(values));
+    dispatch(logIn(values));
     actions.resetForm();
   };
 
@@ -28,8 +28,8 @@ export default function LoginForm() {
   return (
     <Formik
       initialValues={{
-        name: "",
-        number: "",
+        email: "",
+        password: "",
       }}
       onSubmit={handleSubmit}
       validationSchema={addContactSchema}
@@ -44,7 +44,7 @@ export default function LoginForm() {
             placeholder=""
             id={`email${id}`}
           />
-          <label className={css.label} htmlFor={`number${id}`}>
+          <label className={css.label} htmlFor={`email${id}`}>
             Email
           </label>
         </div>
