@@ -7,7 +7,7 @@ import { selectIsRefreshingAuth } from "./redux/auth/selectors";
 import RestrictedRoute from "./RestrictedRoute";
 import PrivateRoute from "./PrivateRoute";
 
-const Navigation = lazy(() => import("./components/Navigation/Navigation"));
+const Layout = lazy(() => import("./components/Layout/Layout"));
 const HomePage = lazy(() => import("./pages/HomePage"));
 const ContactsPage = lazy(() => import("./pages/ContactsPage"));
 const RegisterPage = lazy(() => import("./pages/RegisterPage"));
@@ -27,7 +27,7 @@ export default function App() {
   ) : (
     <Suspense fallback={<Loader />}>
       <Routes>
-        <Route path="/" element={<Navigation />}>
+        <Route path="/" element={<Layout />}>
           <Route index element={<HomePage />} />
           <Route
             path="/contacts"

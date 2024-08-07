@@ -6,7 +6,7 @@ import {
   selectUserAuth,
 } from "../../redux/auth/selectors";
 
-export default function Navigation() {
+export default function Layout() {
   const dispatch = useDispatch();
   const { name } = useSelector(selectUserAuth);
   const isLoggedIn = useSelector(selectIsLoggedInAuth);
@@ -31,7 +31,9 @@ export default function Navigation() {
           </div>
         )}
       </header>
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
     </>
   );
 }
