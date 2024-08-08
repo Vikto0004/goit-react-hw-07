@@ -2,7 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import Loader from "./components/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { refreshUser } from "./redux/auth/operation";
+import { refreshUser } from "./redux/auth/operations";
 import { selectIsRefreshingAuth } from "./redux/auth/selectors";
 import RestrictedRoute from "./RestrictedRoute";
 import PrivateRoute from "./PrivateRoute";

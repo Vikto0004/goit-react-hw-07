@@ -3,7 +3,7 @@ import { useId } from "react";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import css from "./RegisterForm.module.css";
-import { register } from "../../redux/auth/operation";
+import { register } from "../../redux/auth/operations";
 
 export default function RegisterForm() {
   const id = useId();

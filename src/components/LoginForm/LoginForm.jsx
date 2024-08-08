@@ -3,7 +3,7 @@ import { useId } from "react";
 import { useDispatch } from "react-redux";
 import * as Yup from "yup";
 import css from "./LoginForm.module.css";
-import { logIn } from "../../redux/auth/operation";
+import { logIn } from "../../redux/auth/operations";
 
 export default function LoginForm() {
   const id = useId();

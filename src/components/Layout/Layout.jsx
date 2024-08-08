@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from "react-router-dom";
-import { logOut } from "../../redux/auth/operation";
+import { logOut } from "../../redux/auth/operations";
 import { useDispatch, useSelector } from "react-redux";
 import {
   selectIsLoggedInAuth,
